@@ -1,0 +1,35 @@
+@import '@/styles/colors';
+@import '@/styles/vars';
+@import '@/styles/mixins';
+
+.footer {
+  background: $bg;
+  color: $fg;
+  height: fit-content;
+  padding: 20px 10px;
+}
+
+.copyright {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  line-height: 1.5rem;
+  letter-spacing: 0.2rem;
+  @include adaptive-font(16, 14);
+  text-transform: uppercase;
+  height: fit-content;
+  font-family: monospace;
+  gap: 6px;
+
+  .second {
+    @include adaptive-font(14, 10);
+  }
+
+  .link {
+    color: $fg;
+  }
+
+  @media screen and (max-width: 768px) {
+    justify-content: flex-start;
+  }
+}

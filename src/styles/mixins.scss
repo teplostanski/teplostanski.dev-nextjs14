@@ -1,0 +1,10 @@
+@import './vars.scss';
+
+@mixin adaptive-font($maxSize, $minSize) {
+  $addSize: $maxSize - $minSize;
+  $maxWidth: $maxWidth - $minWidth;
+  font-size: calc(
+    #{$minSize + px} + #{$addSize} *
+      ((100vw - #{$minWidth + px}) / #{$maxWidth})
+  );
+}

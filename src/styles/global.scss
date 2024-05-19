@@ -1,0 +1,55 @@
+@import 'normalize.css/normalize';
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Major+Mono+Display&family=Roboto+Mono:wght@100;200;300;400;500&display=swap');
+@import 'colors';
+@import 'vars';
+@import 'mixins';
+
+html {
+  scroll-behavior: auto;
+  scrollbar-width: none;
+  //-webkit-overflow-scrolling: touch;
+}
+
+h1,
+h2,
+p,
+li {
+  max-width: 800px;
+}
+
+html,
+body {
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  scrollbar-width: none;
+  height: unset;
+  overflow-x: hidden;
+  overflow-y: visible;
+}
+
+body::-webkit-scrollbar {
+  width: 0;
+  background-color: transparent;
+}
+body::-moz-scrollbar {
+  width: 0;
+  background-color: transparent;
+}
+body::-ms-scrollbar {
+  width: 0;
+  background-color: transparent;
+}
+
+.container {
+  width: $width;
+  height: $height;
+  background: blue;
+  //border: solid $border-color;
+  //border-width: $border-width;
+}

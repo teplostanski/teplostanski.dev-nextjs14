@@ -1,0 +1,57 @@
+@import '@/styles/colors';
+
+.container {
+  width: calc(100% - 2px);
+  height: fit-content;
+  border: solid $border-color;
+  border-width: 1px 0;
+  transform: translate(0px, 0px);
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 24px;
+  width: fit-content;
+  text-decoration: none;
+  color: $fg;
+  &__text {
+    margin-left: 15px;
+  }
+  @media screen and (max-width: 357px) {
+    &__dot {
+      display: none;
+    }
+  }
+}
+
+.nav {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+  &__item {
+    border: 1px solid $border-color;
+    padding: 20px 25px;
+    border-radius: 50px;
+    text-transform: uppercase;
+    margin: -1px;
+    cursor: pointer;
+    & > a {
+      text-decoration: none;
+      color: $fg;
+    }
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
