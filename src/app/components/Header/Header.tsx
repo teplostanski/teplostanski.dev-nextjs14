@@ -5,7 +5,11 @@ import styles from './Header.module.scss'
 const Header = () => {
   const navItems = [
     {
-      name: 'проекты',
+      name: 'Контакты',
+      path: '#contacts',
+    },
+    {
+      name: 'Проекты',
       path: '/projects',
     },
   ]

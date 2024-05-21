@@ -13,7 +13,7 @@ const Links = () => {
   }
 
   return (
-    <section className={styles.container}>
+    <section id='contacts' className={styles.container}>
       <div className={styles.wrapper}>
         <h2 className='title'>Контакты</h2>
         <div className={styles.block}>
