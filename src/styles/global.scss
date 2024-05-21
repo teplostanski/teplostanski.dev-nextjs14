@@ -53,3 +53,10 @@ body::-ms-scrollbar {
   //border: solid $border-color;
   //border-width: $border-width;
 }
+
+.title {
+  font-size: 24px;
+  font-weight: 200;
+  text-transform: uppercase;
+  margin: 0 0 20px 0;
+}

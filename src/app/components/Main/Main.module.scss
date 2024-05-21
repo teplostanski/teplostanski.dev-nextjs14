@@ -57,7 +57,6 @@
 }
 
 .autotype {
-  //position: absolute;
   &Container {
     display: flex;
     flex-direction: column;
@@ -75,14 +74,29 @@
   &__first {
     width: 277px;
     margin: 10% 10% auto auto;
+    
+    @media screen and (max-width: 580px) {
+      margin: 10% auto auto auto;
+    }
+    
     @media screen and (max-width: 580px) and (orientation: landscape) {
+      margin: 10% auto auto auto;
       width: 180px;
+    }
+    
+    @media screen and (max-width: 375px) {
+      width: 180px;
+      margin: 10% 0 0;
     }
   }
   &__second {
     min-width: 277px;
     margin: 15% 0 auto 0;
     @media screen and (max-width: 580px) and (max-height: 490px) {
+      display: none;
+    }
+    
+    @media screen and (max-width: 375px) {
       display: none;
     }
   }

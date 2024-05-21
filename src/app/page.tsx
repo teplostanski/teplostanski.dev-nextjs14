@@ -1,6 +1,8 @@
 //import Preview from '@/app/components/Preview'
 //import getPostMetadata from '@/utils/getPostMetadata'
 import Main from '@/app/components/Main/Main'
+import Links from './components/Links/Links'
+import Skills from './components/Skills/Skills'
 
 export default function Home() {
   //const postMetadata = getPostMetadata('src/articles')
@@ -9,7 +11,8 @@ export default function Home() {
   return (
     <main>
       <Main />
-      {/*<Preview postMetadata={postMetadata} />*/}
+      <Skills />
+      <Links />
     </main>
   )
 }

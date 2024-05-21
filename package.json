@@ -20,6 +20,7 @@
     "nanoid": "^5.0.7",
     "nche": "^1.1.2",
     "next": "14.2.2",
+    "normalize.css": "^8.0.1",
     "react": "^18",
     "react-dom": "^18",
     "react-type-animation": "^3.2.0",

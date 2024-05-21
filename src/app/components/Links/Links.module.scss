@@ -1,0 +1,69 @@
+@import '@/styles/colors';
+
+.container {
+  height: fit-content;
+  width: auto;
+  background: $bg;
+  z-index: 3;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 0 10px;
+  padding: 60px 0 0;
+}
+
+.block {
+  display: flex;
+  flex-wrap: wrap;
+  width: fit-content;
+  gap: 10px;
+}
+
+.links {
+  border: 1px solid $border-color;
+  width: fit-content;
+  padding: 4px 8px;
+}
+
+.link {
+  text-decoration: none;
+  width: fit-content;
+  cursor: pointer;
+  text-transform: uppercase;
+  
+  .body {
+    color: $fg;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+  
+    .arrow {
+      width: 14px;
+      height: 14px;
+      display: inline-block;
+      margin-left: 7px;
+      background-color: $fg;
+      mask: url('/images/link_arrow_1.svg') no-repeat center / contain;
+      -webkit-mask: url('/images/link_arrow_1.svg') no-repeat center / contain;
+  
+      @media screen and (max-width: 425px) {
+        width: 10px;
+        height: 10px;
+      }
+    }
+  
+    &:hover {
+      color: $hover;
+    }
+  
+    @media screen and (max-width: 425px) {
+      font-size: 14px;
+    }
+  }
+}
+
+
+
+
