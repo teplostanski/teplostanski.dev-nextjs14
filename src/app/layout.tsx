@@ -6,10 +6,6 @@ import Footer from './components/Footer/Footer'
 import { indexPageTitle, indexPageDesc, keywords } from './layout.metadata'
 //import Head from 'next/head'
 
-const isProd = process.env.NODE_ENV === 'production'
-const repoName = process.env.NEXT_PUBLIC_REPO_NAME || ''
-const basePath = isProd && repoName ? `/${repoName}` : ''
-
 export const metadata = {
   title: indexPageTitle,
   description: indexPageDesc,
@@ -32,7 +28,7 @@ export const metadata = {
       },
     ],
   },
-  manifest: `${basePath}/manifest.webmanifest`,
+  manifest: '/manifest.webmanifest',
 }
 
 export default function RootLayout({ children }: { children: ReactNode }) {
