@@ -19,9 +19,8 @@
     justify-content: space-between;
     padding: 22px;
     font-size: 14px;
-    height: calc(100dvh - 70px);
+    height: calc(100svh - 85px);
     max-width: 768px;
-    transition: height 0.5s linear;
 
     @media screen and (max-width: 580px) {
       padding: 12px;
