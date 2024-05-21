@@ -46,6 +46,11 @@ body::-ms-scrollbar {
   background-color: transparent;
 }
 
+a {
+  text-decoration: none;
+  color: $fg;
+}
+
 //.container {
 //  width: $width;
 //  height: $height;

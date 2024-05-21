@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { nanoid } from 'nanoid'
 import styles from './Header.module.scss'
+import Button from '../Button/Button'
 
 const Header = () => {
   const navItems = [
@@ -23,8 +24,10 @@ const Header = () => {
       <nav className={styles.nav}>
         {navItems.map(({ name, path }) => (
           <ul className={styles.nav__list} key={nanoid()}>
-            <li className={styles.nav__item}>
-              <Link href={path}>{name}</Link>
+            <li>
+              <Button>
+                <Link href={path}>{name}</Link>
+              </Button>
             </li>
           </ul>
         ))}

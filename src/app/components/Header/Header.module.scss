@@ -39,19 +39,4 @@
     display: flex;
     align-items: center;
   }
-  &__item {
-    border: 1px solid $border-color;
-    padding: 20px 25px;
-    border-radius: 50px;
-    text-transform: uppercase;
-    margin: -1px;
-    cursor: pointer;
-    & > a {
-      text-decoration: none;
-      color: $fg;
-    }
-    &:hover {
-      text-decoration: underline;
-    }
-  }
 }
