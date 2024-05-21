@@ -21,6 +21,7 @@
     font-size: 14px;
     height: calc(100dvh - 70px);
     max-width: 768px;
+    transition: height 0.5s linear;
 
     @media screen and (max-width: 580px) {
       padding: 12px;

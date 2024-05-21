@@ -9,9 +9,9 @@ const Footer = () => {
           Создано с помощью{' '}
           <a
             className={styles.link}
-            href='https://github.com/teplostanski/nextjs14-gh-pages-static-blog-template'
+            href='https://github.com/teplostanski/nextjs14-gh-pages-static-blog-starter-kit'
           >
-            nextjs14-gh-pages-markdown-static-blog-template
+            nextjs14-gh-pages-markdown-static-blog-starter-kit
           </a>
         </span>
       </div>
