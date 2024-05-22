@@ -1,64 +1,63 @@
-import '@/styles/global.scss'
 import { ReactNode } from 'react'
-
 import Header from './components/Header/Header'
 import Footer from './components/Footer/Footer'
 import { indexPageTitle, indexPageDesc, keywords } from './layout.metadata'
-//import Head from 'next/head'
+import FloatingButtonWrapper from './components/FloatingButtonWrapper'
+
+import '@/styles/global.scss'
 
 export const metadata = {
   title: indexPageTitle,
   description: indexPageDesc,
   keywords: keywords,
   icons: {
-    icon: '/favicon.ico',
-    apple: '/apple-icon.png',
-    other: [
+    icon: [
       {
         rel: 'icon',
-        type: 'image/png',
-        sizes: '32x32',
-        url: '/android-chrome-192x192.png',
+        type: 'image/ico',
+        url: '/favicons/favicon.ico',
       },
       {
         rel: 'icon',
         type: 'image/png',
         sizes: '16x16',
-        url: '/android-chrome-512x512.png',
+        url: '/favicons/favicon-16x16.png',
+      },
+      {
+        rel: 'icon',
+        type: 'image/png',
+        sizes: '32x32',
+        url: '/favicons/favicon-32x32.png',
+      },
+      {
+        rel: 'apple-touch-icon',
+        sizes: '180x180',
+        url: '/favicons/apple-touch-icon.png',
+      },
+      {
+        rel: 'icon',
+        type: 'image/png',
+        sizes: '192x192',
+        url: '/favicons/android-chrome-192x192.png',
+      },
+      {
+        rel: 'icon',
+        type: 'image/png',
+        sizes: '512x512',
+        url: '/favicons/android-chrome-512x512.png',
       },
     ],
   },
+
   manifest: '/manifest.webmanifest',
 }
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang='ru'>
-      {/*<head>
-        <link rel='icon' href='/favicon.ico' />
-        <link
-          rel='apple-touch-icon'
-          sizes='180x180'
-          href='/apple-touch-icon.png'
-        />
-        <link
-          rel='icon'
-          type='image/png'
-          sizes='32x32'
-          href='/favicon-32x32.png'
-        />
-        <link
-          rel='icon'
-          type='image/png'
-          sizes='16x16'
-          href='/favicon-16x16.png'
-        />
-        <link rel='manifest' href='/manifest.json' />
-      </head>*/}
       <body>
         <Header />
-        {children}
-        <Footer />
+        <FloatingButtonWrapper>{children}</FloatingButtonWrapper>
       </body>
     </html>
   )

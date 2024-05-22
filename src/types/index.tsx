@@ -7,7 +7,7 @@ export interface ChildrenProps {
   children: ReactNode
 }
 
-export interface ArticlePageProps {
+export interface projectPageProps {
   params: { slug: Slug }
 }
 

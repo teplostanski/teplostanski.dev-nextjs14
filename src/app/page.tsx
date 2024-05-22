@@ -5,7 +5,7 @@ import Links from './components/Links/Links'
 import Skills from './components/Skills/Skills'
 
 export default function Home() {
-  //const postMetadata = getPostMetadata('src/articles')
+  //const postMetadata = getPostMetadata('src/projects')
   //console.log(postMetadata)
 
   return (

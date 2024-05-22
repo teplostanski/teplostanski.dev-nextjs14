@@ -6,10 +6,12 @@ import Button from '../Button/Button'
 const Header = () => {
   const navItems = [
     {
+      id: 'nav_block_contacts',
       name: 'Контакты',
       path: '#contacts',
     },
     {
+      id: 'nav_block_projects',
       name: 'Проекты',
       path: '/projects',
     },
@@ -22,9 +24,9 @@ const Header = () => {
         <span className={styles.logo__dot}>.dev</span>
       </Link>
       <nav className={styles.nav}>
-        {navItems.map(({ name, path }) => (
+        {navItems.map(({ id, name, path }) => (
           <ul className={styles.nav__list} key={nanoid()}>
-            <li>
+            <li id={id}>
               <Button>
                 <Link href={path}>{name}</Link>
               </Button>

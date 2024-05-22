@@ -12,8 +12,8 @@ const MdSubtitle = ({ children }: ChildrenProps) => {
   return <h2 className={styles.subtitle}>{children}</h2>
 }
 
-const MdArticle = ({ children }: ChildrenProps) => (
-  <article className={styles.article}>{children}</article>
+const Mdproject = ({ children }: ChildrenProps) => (
+  <article className={styles.project}>{children}</article>
 )
 
 const MdList = ({ children }: ChildrenProps) => (
@@ -21,7 +21,7 @@ const MdList = ({ children }: ChildrenProps) => (
 )
 
 const mdOptions = {
-  wrapper: MdArticle,
+  wrapper: Mdproject,
   overrides: {
     h1: {
       component: MdTitle,
