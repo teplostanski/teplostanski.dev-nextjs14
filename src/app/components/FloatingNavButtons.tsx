@@ -4,17 +4,18 @@ import { ReactNode, useEffect, useRef, useState } from 'react'
 import Button from './Button/Button'
 import Footer from './Footer/Footer'
 
-interface FloatingButtonWrapperProps {
-  children: ReactNode
-}
-
-const FloatingButtonWrapper = ({ children }: FloatingButtonWrapperProps) => {
+const FloatingNavButtons = () => {
   const footerRef = useRef<HTMLElement>(null)
   const buttonRef = useRef<HTMLDivElement>(null)
   const [bottomOffset, setBottomOffset] = useState(16)
 
   useEffect(() => {
     let callCount = 0
+
+    /**
+     * Обработчик события прокрутки, который вычисляет расстояние до нижнего края экрана
+     * и устанавливает отступ для кнопки.
+     */
     const handleScroll = () => {
       if (buttonRef.current && footerRef.current) {
         const footerTop = footerRef.current.getBoundingClientRect().top
@@ -22,7 +23,7 @@ const FloatingButtonWrapper = ({ children }: FloatingButtonWrapperProps) => {
 
         if (footerTop <= windowHeight) {
           callCount++
-          console.log(`handleScroll called ${callCount} times`)
+          console.log(`handleScroll вызван ${callCount} раз`)
           const start = performance.now()
 
           const dynamicHeight =
@@ -31,7 +32,7 @@ const FloatingButtonWrapper = ({ children }: FloatingButtonWrapperProps) => {
           setBottomOffset(newBottomOffset)
 
           const end = performance.now()
-          console.log(`handleScroll duration: ${end - start}ms`)
+          console.log(`handleScroll длительность: ${end - start}мс`)
         } else {
           setBottomOffset(16)
         }
@@ -40,7 +41,7 @@ const FloatingButtonWrapper = ({ children }: FloatingButtonWrapperProps) => {
 
     window.addEventListener('scroll', handleScroll)
     window.visualViewport?.addEventListener('resize', handleScroll)
-    handleScroll() // Проверить сразу после монтирования компонента
+    handleScroll()
 
     return () => {
       window.removeEventListener('scroll', handleScroll)
@@ -50,21 +51,18 @@ const FloatingButtonWrapper = ({ children }: FloatingButtonWrapperProps) => {
 
   return (
     <>
-      <div id='content'>
-        {children}
-        <div
-          ref={buttonRef}
-          className='floatMenu'
-          style={{
-            bottom: `${bottomOffset}px`,
-            right: '16px',
-            position: 'fixed',
-            zIndex: 10000000000,
-            transition: 'bottom 0.3s ease',
-          }}
-        >
-          <Button>Жмяк✨</Button>
-        </div>
+      <div
+        ref={buttonRef}
+        className='floatMenu'
+        style={{
+          bottom: `${bottomOffset}px`,
+          right: '16px',
+          position: 'fixed',
+          zIndex: 10000000000,
+          transition: 'bottom 0.3s ease',
+        }}
+      >
+        <Button>Жмяк✨</Button>
       </div>
       <footer ref={footerRef}>
         <Footer />
@@ -73,4 +71,4 @@ const FloatingButtonWrapper = ({ children }: FloatingButtonWrapperProps) => {
   )
 }
 
-export default FloatingButtonWrapper
+export default FloatingNavButtons

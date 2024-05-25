@@ -24,8 +24,8 @@ export default function projectPage({ params }: projectPageProps) {
   const slug = params.slug
   const { content } = getPostContent(slug)
   return (
-    <main>
+    <section>
       <MarkdownRender content={content} />
-    </main>
+    </section>
   )
 }

@@ -1,10 +1,9 @@
+// src/app/layout.tsx
 import { ReactNode } from 'react'
 import Header from './components/Header/Header'
-import Footer from './components/Footer/Footer'
 import { indexPageTitle, indexPageDesc, keywords } from './layout.metadata'
-import FloatingButtonWrapper from './components/FloatingButtonWrapper'
-
 import '@/styles/global.scss'
+import ResponsiveWrapper from './components/ResponsiveWrapper'
 
 export const metadata = {
   title: indexPageTitle,
@@ -57,7 +56,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html lang='ru'>
       <body>
         <Header />
-        <FloatingButtonWrapper>{children}</FloatingButtonWrapper>
+        <ResponsiveWrapper>{children}</ResponsiveWrapper>
       </body>
     </html>
   )

@@ -9,10 +9,10 @@ export default function Home() {
   //console.log(postMetadata)
 
   return (
-    <main>
+    <>
       <Main />
       <Skills />
       <Links />
-    </main>
+    </>
   )
 }
