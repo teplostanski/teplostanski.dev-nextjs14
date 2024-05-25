@@ -1,13 +1,19 @@
+// components/Button.tsx
 'use client'
 
-import React, { ReactNode, useRef, useCallback } from 'react'
+import React, {
+  ReactNode,
+  useRef,
+  useCallback,
+  ButtonHTMLAttributes,
+} from 'react'
 import styles from './Button.module.scss'
 
-interface ButtonProps {
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode
 }
 
-const Button: React.FC<ButtonProps> = ({ children }) => {
+const Button: React.FC<ButtonProps> = ({ children, ...props }) => {
   const buttonRef = useRef<HTMLButtonElement>(null)
 
   const createRipple = useCallback((e: React.MouseEvent<HTMLButtonElement>) => {
@@ -32,7 +38,17 @@ const Button: React.FC<ButtonProps> = ({ children }) => {
   }, [])
 
   return (
-    <button ref={buttonRef} className={styles.button} onClick={createRipple}>
+    <button
+      ref={buttonRef}
+      className={styles.button}
+      onClick={(e) => {
+        createRipple(e)
+        if (props.onClick) {
+          props.onClick(e)
+        }
+      }}
+      {...props}
+    >
       {children}
     </button>
   )

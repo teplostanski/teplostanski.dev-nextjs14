@@ -4,6 +4,7 @@ import Header from './components/Header/Header'
 import { indexPageTitle, indexPageDesc, keywords } from './layout.metadata'
 import '@/styles/global.scss'
 import ResponsiveWrapper from './components/ResponsiveWrapper'
+import BackButton from './components/BackButton/BackButton'
 
 export const metadata = {
   title: indexPageTitle,
@@ -56,6 +57,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html lang='ru'>
       <body>
         <Header />
+        <BackButton />
         <ResponsiveWrapper>{children}</ResponsiveWrapper>
       </body>
     </html>

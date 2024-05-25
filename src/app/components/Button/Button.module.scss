@@ -1,8 +1,10 @@
 @import '@/styles/colors';
 
 .button {
+  display: flex;
+  align-items: center;
   position: relative;
-  overflow: hidden; /* Чтобы рябь не выходила за пределы кнопки */
+  overflow: hidden;
   background: $bg;
   border: 1px solid $border-color;
   padding: 20px 25px;
