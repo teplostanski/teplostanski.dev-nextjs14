@@ -19,6 +19,7 @@ export default function getPostMetadata(basePath: string) {
       cook_time: matterResult.data.cook_time,
       slug: filename.replace('.md', ''),
       img: matterResult.data.img,
+      bio: matterResult.data.bio,
     }
   })
 }
