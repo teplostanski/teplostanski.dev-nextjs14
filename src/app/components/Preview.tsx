@@ -5,11 +5,12 @@ import React, { useState } from 'react'
 import PostCard from './PostCard'
 import SearchBar from './SearchBar'
 
-export default function Preview({
-  postMetadata,
-}: {
-  postMetadata: PostMetadata
-}) {
+type Props = {
+  postMetadata: PostMetadata[]
+  locale: 'ru' | 'en' // ← добавили
+}
+
+export default function Preview({ postMetadata, locale }: Props) {
   const [searchValue, setSearchValue] = useState('')
 
   return (
@@ -17,12 +18,14 @@ export default function Preview({
       <SearchBar searchValue={searchValue} setSearchValue={setSearchValue} />
       <div className='postsContainer'>
         {postMetadata
-          .filter((val: { title: string | string[] }) => {
-            return val.title.includes(searchValue)
-          })
-          .map((post: PostMetadata) => {
-            return <PostCard key={nanoid()} post={post} />
-          })}
+          .filter((val) => val.title.includes(searchValue))
+          .map((post) => (
+            <PostCard
+              key={nanoid()}
+              post={post}
+              locale={locale} // ← передаём в PostCard
+            />
+          ))}
       </div>
     </>
   )

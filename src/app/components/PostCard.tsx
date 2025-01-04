@@ -1,27 +1,30 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { PostMetadata } from '@/types'
-import { basePath } from '@/constants'
 
-export default function PostCard({ post }: PostMetadata) {
+type Props = {
+  post: PostMetadata
+  locale: 'ru' | 'en'
+}
+
+export default function PostCard({ post, locale }: Props) {
+  // Если 'en', то ссылка должна быть /projects/en/slug
+  // Иначе /projects/slug
+  const href =
+    locale === 'en' ? `/projects/en/${post.slug}` : `/projects/${post.slug}`
+
   return (
-    <Link className='unstyled' href={`/projects/${post.slug}`}>
+    <Link className='unstyled' href={href}>
       <div className='postCard'>
         <h3>{post.title}</h3>
         <Image
-          src={`${basePath}${post.img}`}
+          src={post.img}
           alt={post.title}
-          sizes='(max-width: 750px)'
-          style={{
-            width: '100%',
-            height: '60%',
-            objectFit: 'cover',
-          }}
+          style={{ width: '100%', height: '60%', objectFit: 'cover' }}
           width={500}
           height={300}
-          priority={true}
+          priority
         />
-
         <p>{post.bio}</p>
         <div className='statsContainer'>
           <div>

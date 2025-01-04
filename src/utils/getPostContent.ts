@@ -1,12 +1,16 @@
-import { Slug } from '@/types'
+// src/utils/getPostContent.ts
+// Возвращает контент и frontmatter поста
+
 import fs from 'fs'
 import matter from 'gray-matter'
+import { Slug } from '@/types'
 
-export function getPostContent(slug: Slug) {
-  const folder = 'src/projects/'
-  const file = folder + `${slug}.md`
-  const content = fs.readFileSync(file, 'utf8')
-
-  const matterResult = matter(content)
-  return matterResult
+export function getPostContent(folderPath: string, slug: Slug) {
+  const file = `${folderPath}/${slug}.md`
+  const fileContents = fs.readFileSync(file, 'utf8')
+  const matterResult = matter(fileContents)
+  return {
+    content: matterResult.content,
+    data: matterResult.data,
+  }
 }

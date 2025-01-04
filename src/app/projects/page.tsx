@@ -1,13 +1,8 @@
-import Preview from '@/app/components/Preview'
-import getPostMetadata from '@/utils/getPostMetadata'
+// src/app/projects/page.tsx
+// Список проектов на русском
 
-export default function projects() {
-  const postMetadata = getPostMetadata('src/projects')
-  console.log(postMetadata)
+import ProjectList from '../components/ProjectList'
 
-  return (
-    <>
-      <Preview postMetadata={postMetadata} />
-    </>
-  )
+export default function ProjectsPageRu() {
+  return <ProjectList locale='ru' />
 }
