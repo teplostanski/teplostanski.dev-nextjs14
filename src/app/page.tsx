@@ -1,4 +1,3 @@
-import { Suspense } from 'react'
 import About from './components/About/About'
 import Links from './components/Links/Links'
 
@@ -7,10 +6,8 @@ export default function Home() {
     <>
       <h1 style={{}}>игорь теплостанский</h1>
       <p>Всё в порядке! Css стили подгрузились ;3</p>
-      <Suspense>
-        <About />
-        <Links />
-      </Suspense>
+      <About />
+      <Links />
     </>
   )
 }

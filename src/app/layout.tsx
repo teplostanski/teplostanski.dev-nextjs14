@@ -65,7 +65,6 @@ export default async function RootLayout({
       <body>
         <NuqsAdapter>
           <Suspense>
-            {' '}
             <Providers>
               <Header />
               {children}

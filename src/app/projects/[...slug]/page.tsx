@@ -1,7 +1,6 @@
 // src/app/projects/[...slug]/page.tsx
 import getPostMetadata from '@/utils/getPostMetadata'
 import ClientProjectDetail from './ClientProjectDetail'
-import { Suspense } from 'react'
 
 export async function generateStaticParams() {
   const ruPosts = getPostMetadata('src/projects/ru', 'ru')
@@ -27,9 +26,5 @@ export default function ProjectsCatchAll({
   const enPosts = getPostMetadata('src/projects/en', 'en')
   const allPosts = [...ruPosts, ...enPosts]
 
-  return (
-    <Suspense>
-      <ClientProjectDetail slug={slug} allPosts={allPosts} />
-    </Suspense>
-  )
+  return <ClientProjectDetail slug={slug} allPosts={allPosts} />
 }

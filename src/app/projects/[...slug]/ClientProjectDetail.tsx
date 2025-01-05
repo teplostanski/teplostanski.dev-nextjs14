@@ -3,7 +3,6 @@
 import { useQueryState, parseAsString } from 'nuqs'
 import MarkdownRender from '@/app/components/MarkdownRender/MarkdownRender'
 import { PostMetadata } from '@/types'
-import { Suspense } from 'react'
 
 type Props = {
   slug: string
@@ -22,9 +21,5 @@ export default function ClientProjectDetail({ slug, allPosts }: Props) {
     return <h1>404 Not Found</h1>
   }
 
-  return (
-    <Suspense fallback={<h1>Loading...</h1>}>
-      <MarkdownRender content={post.content} />
-    </Suspense>
-  )
+  return <MarkdownRender content={post.content} />
 }
