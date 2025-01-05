@@ -1,6 +1,6 @@
 {
-  "name": "nextjs14-gh-pages-markdown-static-blog-template",
-  "version": "1.0.0",
+  "name": "teplostanski.dev",
+  "version": "4.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -13,6 +13,7 @@
   "dependencies": {
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
+    "@fontsource/cousine": "^5.1.1",
     "@mui/material": "^5.15.17",
     "classnames": "^2.5.1",
     "gray-matter": "^4.0.3",
@@ -20,12 +21,13 @@
     "nanoid": "^5.0.7",
     "next": "14.2.2",
     "normalize.css": "^8.0.1",
+    "nuqs": "^2.3.0",
     "react": "^18",
     "react-dom": "^18",
     "react-icons": "^5.2.1",
     "react-type-animation": "^3.2.0",
-    "vite-plugin-pretty-module-classnames": "^1.2.0",
-    "zustand": "^4.5.2"
+    "use-intl": "^3.26.3",
+    "zustand": "^5.0.2"
   },
   "devDependencies": {
     "@types/node": "^20",

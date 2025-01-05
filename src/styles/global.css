@@ -1,0 +1,22 @@
+@import url('normalize.css/normalize');
+
+body {
+  font-family: 'Cousine', monospace;
+  margin: 8px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+  text-wrap-style: balance;
+}
+
+p,
+span {
+  text-wrap: pretty;
+  text-wrap-style: pretty;
+}

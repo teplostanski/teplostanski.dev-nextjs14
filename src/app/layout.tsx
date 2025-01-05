@@ -1,10 +1,13 @@
 // src/app/layout.tsx
-import { ReactNode } from 'react'
+import { ReactNode, Suspense } from 'react'
 import Header from './components/Header/Header'
 import { indexPageTitle, indexPageDesc, keywords } from './layout.metadata'
-import '@/styles/global.scss'
-import ResponsiveWrapper from './components/ResponsiveWrapper'
-import BackButton from './components/BackButton/BackButton'
+import '@/styles/global.css'
+import Footer from './components/Footer/Footer'
+import { NuqsAdapter } from 'nuqs/adapters/next/app'
+
+import '@fontsource/cousine'
+import Providers from './providers'
 
 export const metadata = {
   title: indexPageTitle,
@@ -52,13 +55,21 @@ export const metadata = {
   manifest: '/manifest.webmanifest',
 }
 
-export default function RootLayout({ children }: { children: ReactNode }) {
+export default async function RootLayout({
+  children,
+}: {
+  children: ReactNode
+}) {
   return (
     <html lang='ru'>
       <body>
-        <Header />
-        <BackButton />
-        <ResponsiveWrapper>{children}</ResponsiveWrapper>
+        <NuqsAdapter>
+          <Providers>
+            <Header />
+            {children}
+            <Footer />
+          </Providers>
+        </NuqsAdapter>
       </body>
     </html>
   )

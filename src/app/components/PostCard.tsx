@@ -20,7 +20,7 @@ export default function PostCard({ post, locale }: Props) {
         <Image
           src={post.img}
           alt={post.title}
-          style={{ width: '100%', height: '60%', objectFit: 'cover' }}
+          //style={{ width: '100%', height: '60%', objectFit: 'cover' }}
           width={500}
           height={300}
           priority
