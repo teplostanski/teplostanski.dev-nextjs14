@@ -5,9 +5,6 @@ import { useQueryState, parseAsString } from 'nuqs'
 import { links } from './Links.constants'
 
 const Links = () => {
-  const [locale] = useQueryState('locale', parseAsString)
-  console.log(locale)
-
   return (
     <section id='contacts'>
       <div>

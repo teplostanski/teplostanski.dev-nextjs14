@@ -1,10 +1,10 @@
 // src/utils/getPostMetadata.ts
-// Возвращает массив метаданных из указанной папки
-
 import fs from 'fs'
 import matter from 'gray-matter'
 
-export default function getPostMetadata(basePath: string) {
+type Locale = 'ru' | 'en'
+
+export default function getPostMetadata(basePath: string, locale: Locale) {
   const folder = basePath + '/'
   const files = fs.readdirSync(folder).filter((file) => file.endsWith('.md'))
 
@@ -20,6 +20,8 @@ export default function getPostMetadata(basePath: string) {
       slug: filename.replace('.md', ''),
       img: matterResult.data.img,
       bio: matterResult.data.bio,
+      content: matterResult.content,
+      locale, // Указываем локаль явно
     }
   })
 }

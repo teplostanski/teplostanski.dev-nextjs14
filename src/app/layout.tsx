@@ -64,11 +64,14 @@ export default async function RootLayout({
     <html lang='ru'>
       <body>
         <NuqsAdapter>
-          <Providers>
-            <Header />
-            {children}
-            <Footer />
-          </Providers>
+          <Suspense fallback={<div>Loading application...</div>}>
+            {' '}
+            <Providers>
+              <Header />
+              {children}
+              <Footer />
+            </Providers>
+          </Suspense>
         </NuqsAdapter>
       </body>
     </html>

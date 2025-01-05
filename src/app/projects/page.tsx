@@ -1,17 +1,16 @@
 // src/app/projects/page.tsx
-// Список проектов на русском
-
 import getPostMetadata from '@/utils/getPostMetadata'
-import Preview from '@/app/components/Preview'
+import ClientProjectsPage from './ClientProjectsPage'
+import { Suspense } from 'react'
 
 export default function ProjectsPage() {
-  // Загружаем посты из ru
-  const postMetadata = getPostMetadata('src/projects/ru')
+  const ruPosts = getPostMetadata('src/projects/ru', 'ru')
+  const enPosts = getPostMetadata('src/projects/en', 'en')
+  const allPosts = [...ruPosts, ...enPosts]
 
   return (
-    <section>
-      <h1>Projects (RU)</h1>
-      <Preview postMetadata={postMetadata} locale='ru' />
-    </section>
+    <Suspense>
+      <ClientProjectsPage allPosts={allPosts} />
+    </Suspense>
   )
 }
