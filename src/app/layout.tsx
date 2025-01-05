@@ -64,7 +64,7 @@ export default async function RootLayout({
     <html lang='ru'>
       <body>
         <NuqsAdapter>
-          <Suspense fallback={<div>Loading application...</div>}>
+          <Suspense>
             {' '}
             <Providers>
               <Header />
