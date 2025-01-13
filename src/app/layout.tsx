@@ -1,13 +1,9 @@
 // src/app/layout.tsx
-import { ReactNode, Suspense } from 'react'
-import Header from './components/Header/Header'
-import { indexPageTitle, indexPageDesc, keywords } from './layout.metadata'
 import '@/styles/global.css'
-import Footer from './components/Footer/Footer'
-import { NuqsAdapter } from 'nuqs/adapters/next/app'
-
-import '@fontsource/cousine'
+import { ReactNode } from 'react'
+import { indexPageDesc, indexPageTitle, keywords } from './layout.metadata'
 import Providers from './providers'
+import '@fontsource/cousine'
 
 export const metadata = {
   title: indexPageTitle,
@@ -60,19 +56,5 @@ export default async function RootLayout({
 }: {
   children: ReactNode
 }) {
-  return (
-    <html lang='ru'>
-      <body>
-        <NuqsAdapter>
-          <Suspense>
-            <Providers>
-              <Header />
-              {children}
-              <Footer />
-            </Providers>
-          </Suspense>
-        </NuqsAdapter>
-      </body>
-    </html>
-  )
+  return <Providers>{children}</Providers>
 }
